@@ -1,4 +1,4 @@
-package com.ms.cryptoapp
+package com.ms.cryptoapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

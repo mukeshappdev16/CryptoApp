@@ -2,6 +2,7 @@ package com.ms.cryptoapp
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import com.ms.cryptoapp.presentation.App
 
 fun main() = application {
     Window(
