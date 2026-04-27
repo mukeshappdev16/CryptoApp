@@ -2,7 +2,6 @@ package com.ms.cryptoapp.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ms.cryptoapp.domain.modal.Coin
 import com.ms.cryptoapp.domain.repository.CryptoRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -10,8 +9,8 @@ import kotlinx.coroutines.launch
 
 class CryptoListViewModel(private val cryptoRepository: CryptoRepository) : ViewModel() {
 
-    private val _coins = MutableStateFlow<List<Coin>>(emptyList())
-    val coins: StateFlow<List<Coin>> = _coins
+    private val _state = MutableStateFlow(CryptoListState())
+    val state: StateFlow<CryptoListState> = _state
 
     init {
         getCoins()
@@ -19,10 +18,12 @@ class CryptoListViewModel(private val cryptoRepository: CryptoRepository) : View
 
     private fun getCoins() {
         viewModelScope.launch {
+            _state.value = CryptoListState(isLoading = true)
             try {
-                _coins.value = cryptoRepository.getCryptoCoins()
+                val coins = cryptoRepository.getCryptoCoins()
+                _state.value = CryptoListState(coins = coins)
             } catch (e: Exception) {
-                // handle error
+                _state.value = CryptoListState(error = e.message ?: "An unexpected error occurred")
             }
         }
     }

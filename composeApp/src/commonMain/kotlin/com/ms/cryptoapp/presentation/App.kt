@@ -19,11 +19,13 @@ import androidx.navigation.toRoute
 import com.ms.cryptoapp.common.DetailRoute
 import com.ms.cryptoapp.common.HomeRoute
 
+import com.ms.cryptoapp.presentation.theme.CryptoAppTheme
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+    CryptoAppTheme {
         val navController = rememberNavController()
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         
