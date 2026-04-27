@@ -6,6 +6,4 @@ import kotlinx.serialization.Serializable
 object HomeRoute
 
 @Serializable
-object DetailRoute{
-
-}
+data class DetailRoute(val coinId: String)

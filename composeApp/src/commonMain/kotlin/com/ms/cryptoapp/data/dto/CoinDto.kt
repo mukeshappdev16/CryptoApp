@@ -1,7 +1,9 @@
 package com.ms.cryptoapp.data.dto
 
 import com.ms.cryptoapp.domain.modal.Coin
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class CoinDto(
     val id: String,
     val is_active: Boolean,
@@ -17,6 +19,7 @@ fun CoinDto.toCoin(): Coin {
         id = id,
         isActive = is_active,
         name = name,
-        symbol = symbol
+        symbol = symbol,
+        rank = rank
     )
 }

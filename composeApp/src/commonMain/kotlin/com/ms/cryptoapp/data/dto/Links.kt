@@ -1,5 +1,8 @@
 package com.ms.cryptoapp.data.dto
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Links(
     val explorer: List<String>,
     val facebook: List<String>,
