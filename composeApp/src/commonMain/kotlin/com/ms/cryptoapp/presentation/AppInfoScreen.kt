@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.ms.cryptoapp.kmp.getPlatformVersion
 
 @Composable
 fun AppInfoScreen(
@@ -54,6 +55,14 @@ fun AppInfoScreen(
         )
         
         Spacer(modifier = Modifier.height(48.dp))
+        
+        Text(
+            text = "Platform: ${getPlatformVersion()}",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        
+        Spacer(modifier = Modifier.height(8.dp))
         
         Text(
             text = "Version 1.0.0",
