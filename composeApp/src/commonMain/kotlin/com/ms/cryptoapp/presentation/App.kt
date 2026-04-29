@@ -3,12 +3,9 @@ package com.ms.cryptoapp.presentation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
@@ -18,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.ms.cryptoapp.common.DetailRoute
 import com.ms.cryptoapp.common.HomeRoute
+import com.ms.cryptoapp.common.InfoRoute
 
 import com.ms.cryptoapp.presentation.theme.CryptoAppTheme
 
@@ -40,8 +38,11 @@ fun App() {
                 TopAppBar(
                     title = {
                         Text(
-                            text = if (navBackStackEntry?.destination?.route?.contains("DetailRoute") == true) 
-                                "Coin Detail" else "Crypto Currencies"
+                            text = when {
+                                navBackStackEntry?.destination?.route?.contains("DetailRoute") == true -> "Coin Detail"
+                                navBackStackEntry?.destination?.route?.contains("InfoRoute") == true -> "About"
+                                else -> "Crypto Currencies"
+                            }
                         )
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
@@ -54,6 +55,17 @@ fun App() {
                                 Icon(
                                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                     contentDescription = "Back"
+                                )
+                            }
+                        }
+                    },
+                    actions = {
+                        val isInfoScreen = navBackStackEntry?.destination?.route?.contains("InfoRoute") == true
+                        if (!isInfoScreen) {
+                            IconButton(onClick = { navController.navigate(InfoRoute) }) {
+                                Icon(
+                                    imageVector = Icons.Default.Info,
+                                    contentDescription = "App Info"
                                 )
                             }
                         }
@@ -73,6 +85,9 @@ fun App() {
                         coinId = detailRoute.coinId,
                         modifier = Modifier.padding(innerPadding)
                     )
+                }
+                composable<InfoRoute> {
+                    AppInfoScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
