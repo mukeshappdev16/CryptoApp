@@ -13,9 +13,18 @@ A modern, cross-platform cryptocurrency tracking application built with **Compos
 
 ## 📸 Screenshots
 
-| Android | iOS | Desktop |
+### 📱 Mobile (Android & iOS)
+
+| Coin List | Coin Detail | App Info |
 | :---: | :---: | :---: |
-| <img src="screenshots/android/Screenshot_20260429_155352.png" width="200" /> | <img src="screenshots/iOS/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-29%20at%2015.58.17.png" width="200" /> | <img src="screenshots/desktop/Screenshot%202026-04-29%20at%203.55.30%E2%80%AFPM.png" width="400" /> |
+| <img src="screenshots/android/Screenshot_20260429_155352.png" width="200" /><br><sub>Android</sub> | <img src="screenshots/android/Screenshot_20260429_155359.png" width="200" /><br><sub>Android</sub> | <img src="screenshots/android/Screenshot_20260429_155405.png" width="200" /><br><sub>Android</sub> |
+| <img src="screenshots/iOS/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-29%20at%2015.58.17.png" width="200" /><br><sub>iOS</sub> | <img src="screenshots/iOS/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-29%20at%2015.58.21.png" width="200" /><br><sub>iOS</sub> | <img src="screenshots/iOS/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-29%20at%2015.58.24.png" width="200" /><br><sub>iOS</sub> |
+
+### 💻 Desktop (JVM)
+
+| Coin List | Coin Detail | App Info |
+| :---: | :---: | :---: |
+| <img src="screenshots/desktop/Screenshot%202026-04-29%20at%203.55.30%E2%80%AFPM.png" width="250" /> | <img src="screenshots/desktop/Screenshot%202026-04-29%20at%203.55.43%E2%80%AFPM.png" width="250" /> | <img src="screenshots/desktop/Screenshot%202026-04-29%20at%203.56.42%E2%80%AFPM.png" width="250" /> |
 
 ## 🛠️ Tech Stack
 
