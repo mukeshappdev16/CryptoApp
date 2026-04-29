@@ -11,6 +11,12 @@ A modern, cross-platform cryptocurrency tracking application built with **Compos
 - **Type-Safe Navigation**: Secure and robust navigation between screens.
 - **Platform-Specific Enhancements**: Includes native scrollbar support for Desktop.
 
+## 📸 Screenshots
+
+| Android | iOS | Desktop |
+| :---: | :---: | :---: |
+| <img src="screenshots/android/Screenshot_20260429_155352.png" width="200" /> | <img src="screenshots/iOS/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-04-29%20at%2015.58.17.png" width="200" /> | <img src="screenshots/desktop/Screenshot%202026-04-29%20at%203.55.30%E2%80%AFPM.png" width="400" /> |
+
 ## 🛠️ Tech Stack
 
 - **UI Framework**: [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/)
